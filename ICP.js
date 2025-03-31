@@ -1,9 +1,9 @@
  
-// ICP.js - 备案信息数据集
+// ICP.js - 备案信息数据库
 window.icpData = {
     "彬ICP备12345678号": {
         icpNumber: "彬ICP备12345678号",
-        unit: "此为测试网站标题",
+        unit: "公司/张三",
         auditTime: "2025-03-31",
         nature: "企业/个人",
         status: "域名"
