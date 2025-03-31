@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>天彬ICP备案｜文天玩WenTianPlay</title>
-<link rel="shortcut icon" href="https://wentianplay.com/index/API/assets/icon.ico" type="image/x-icon">
-<meta name="keywords" content="文天玩，文天玩wentianplay,天彬,天彬TianBin,ICP,彬ICP备,天彬ICP备案"/>
-<meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是个另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
+    <link rel="shortcut icon" href="https://wentianplay.com/index/API/assets/icon.ico" type="image/x-icon">
+    <meta name="keywords" content="文天玩，文天玩wentianplay,天彬,天彬TianBin,ICP,彬ICP备,天彬ICP备案"/>
+    <meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是个另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
     <style>
         body {
             font-family: "Microsoft YaHei", sans-serif;
@@ -68,12 +68,50 @@
             color: #666;
         }
 
+        .copy-box {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        #icpCode {
+            padding: 12px;
+            width: 400px;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+            background-color: #f8f9fa;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        button.copy-btn {
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.copy-btn:hover {
+            background-color: #218838;
+        }
+
         @media (max-width: 600px) {
             #icpInput {
                 width: 100%;
                 margin-bottom: 10px;
             }
             button {
+                width: 100%;
+                margin-left: 0;
+            }
+            #icpCode {
+                width: calc(100% - 24px);
+                margin-bottom: 10px;
+            }
+            button.copy-btn {
                 width: 100%;
                 margin-left: 0;
             }
@@ -97,13 +135,38 @@
         <!-- 动态加载查询结果 -->
     </div>
 
+    <div class="copy-box">
+        <input type="text" id="icpCode" value='<a href="https://WenTianPlay.TOP/" target="_blank">彬ICP备20252823号</a>' readonly>
+        <button onclick="copyICPCode()" class="copy-btn">复制备案代码</button>
+    </div>
+
     <div class="footer">
-<a href="https://WenTianPlay.TOP/" target="_blank">彬ICP备20252823号</a>
         <p>© 2025 文天玩WenTianPlay 版权所有</p>
     </div>
 
     <script src="ICP.js"></script>
     <script>
+        // 安全防护功能
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            // 禁用F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+            }
+            // 禁用Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+            }
+            // 禁用Ctrl+U
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+            }
+        });
+
+        // 原有功能
         function searchICP() {
             const input = document.getElementById('icpInput').value.trim();
             const resultDiv = document.getElementById('result');
@@ -113,19 +176,12 @@
                 return;
             }
 
-            // 标准化输入格式
             const normalizedInput = input.toUpperCase().replace(/[彬ICP备]/g, '') || '未找到';
-            
-            // 在ICP数据中查找
             const icpInfo = window.icpData[input] || Object.values(window.icpData).find(
                 item => item.icpNumber.replace(/[彬ICP备]/g, '') === normalizedInput
             );
 
-            if (icpInfo) {
-                showResult(createInfoHTML(icpInfo));
-            } else {
-                showResult("未找到相关备案信息，请核对备案号码");
-            }
+            showResult(icpInfo ? createInfoHTML(icpInfo) : "未找到相关备案信息，请核对备案号码");
         }
 
         function showResult(content) {
@@ -153,9 +209,20 @@
                 </div>
             `;
         }
+
+        function copyICPCode() {
+            const codeInput = document.getElementById('icpCode');
+            codeInput.select();
+            try {
+                navigator.clipboard.writeText(codeInput.value);
+                const btn = event.target;
+                btn.innerText = "✓ 已复制！";
+                setTimeout(() => btn.innerText = "复制备案代码", 1500);
+            } catch (err) {
+                alert('复制失败，请手动选择内容复制');
+            }
+        }
     </script>
-<meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是个另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/>
- 
 </body>
 </html>
  
