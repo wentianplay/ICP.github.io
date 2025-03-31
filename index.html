@@ -1,0 +1,157 @@
+ 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彬ICP备</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .search-box {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        #icpInput {
+            padding: 12px;
+            width: 300px;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .icp-info {
+            color: #007bff;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            #icpInput {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            button {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>彬ICP备案信息公示系统</h1>
+        <p>工业和信息化部备案管理系统</p>
+        <p>若需要“彬ICP备案号”可联系邮箱</p>
+        <p>文天玩WenTianPlay提供技术支持</p>
+        <p>彬ICP备是免费公益在线提供备案服务</p>
+        <p>联系邮箱: WenTianPlay@qq.com</p>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="icpInput" placeholder="请输入备案号（例：彬ICP备12345678号）">
+        <button onclick="searchICP()">查询备案信息</button>
+    </div>
+
+    <div class="result" id="result">
+        <!-- 动态加载查询结果 -->
+    </div>
+
+    <div class="footer">
+        <p>© 2023 工业和信息化部 版权所有</p>
+    </div>
+
+    <script src="ICP.js"></script>
+    <script>
+        function searchICP() {
+            const input = document.getElementById('icpInput').value.trim();
+            const resultDiv = document.getElementById('result');
+            
+            if (!input) {
+                showResult("请输入有效的备案号码");
+                return;
+            }
+
+            // 标准化输入格式
+            const normalizedInput = input.toUpperCase().replace(/[彬ICP备]/g, '') || '未找到';
+            
+            // 在ICP数据中查找
+            const icpInfo = window.icpData[input] || Object.values(window.icpData).find(
+                item => item.icpNumber.replace(/[彬ICP备]/g, '') === normalizedInput
+            );
+
+            if (icpInfo) {
+                showResult(createInfoHTML(icpInfo));
+            } else {
+                showResult("未找到相关备案信息，请核对备案号码");
+            }
+        }
+
+        function showResult(content) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = content;
+            resultDiv.style.display = 'block';
+        }
+
+        function createInfoHTML(info) {
+            return `
+                <div class="icp-info">
+                    备案/许可证号：${info.icpNumber}
+                </div>
+                <div class="info-item">
+                    <strong>主办单位：</strong>${info.unit}
+                </div>
+                <div class="info-item">
+                    <strong>审核时间：</strong>${info.auditTime}
+                </div>
+                <div class="info-item">
+                    <strong>单位性质：</strong>${info.nature}
+                </div>
+                <div class="info-item">
+                    <strong>备案状态：</strong><span style="color: #28a745;">${info.status}</span>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
+ 
