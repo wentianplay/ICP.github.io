@@ -1,33 +1,23 @@
- 
 // ICP.js - 备案信息数据库
-window.icpData = {
-    "彬ICP备12345678号": {
-        icpNumber: "彬ICP备12345678号",
-        unit: "公司/张三",
-        auditTime: "2025-03-31",
-        nature: "企业/个人",
-        status: "域名"
-    },
-    "彬ICP备20258956号": {
-        icpNumber: "彬ICP备20258956号",
-        unit: "文天玩网络科技有限公司",
-        auditTime: "2025-03-31",
-        nature: "企业",
-        status: "wentianplay.com"
-    },
-    "彬ICP备20254272号": {
-        icpNumber: "彬ICP备20254272号",
-        unit: "文天玩网络科技有限公司",
-        auditTime: "2025-03-31",
-        nature: "企业",
-        status: "wentianplay.net"
-    },
-    "彬ICP备20252823号": {
-        icpNumber: "彬ICP备20252823号",
-        unit: "文天玩网络科技有限公司",
-        auditTime: "2025-03-31",
-        nature: "企业",
-        status: "wentianplay.top"
-    }
-};
- 
+"20252823": {
+                op: "苏天彬",
+                ICP: "彬ICP备20252823号}",
+                name: "天彬ICP备案｜文天玩WenTianPlay",
+                link: "https://wentianplay.top",
+                status: "2025-03-31"
+            },
+"20258956": {
+                op: "苏天彬",
+                ICP: "彬ICP备20258956号}",
+                name: "文天玩WenTianPlay国际官网",
+                link: "https://wentianplay.com",
+                status: "2025-03-31"
+            },
+"20254272": {
+                op: "苏天彬",
+                ICP: "彬ICP备20254272号}",
+                name: "文天玩WenTianPlay数据服务",
+                link: "https://wentianplay.net",
+                status: "2025-03-31"
+            }
+     };
