@@ -49,6 +49,7 @@ const ICP = (() => {
             复制备案号代码到页脚处
              <pre>&lt;a href="https://WenTianPlay.TOP/" target="_blank"rel="noopener noreferrer"&gt;${number}&lt;/a&gt;</pre>
 
+        `
     }
 })();
  
