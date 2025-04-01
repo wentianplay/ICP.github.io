@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>天彬ICP备案｜文天玩WenTianPlay</title>
+    <link rel="shortcut icon" href="https://wentianplay.com/index/API/assets/icon.ico" type="image/x-icon">
+    <meta name="keywords" content="文天玩，文天玩wentianplay,天彬,天彬TianBin,ICP,彬ICP备,天彬ICP备案"/>
+    <meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
+<script src="ICP.js"></script>
+</head>
+
     <style>
         body {
             background: url('./WTP.png') no-repeat center/cover;
@@ -79,13 +85,17 @@
         }
     </style>
 </head>
-<body>
+
+ <body>
     <div class="container">
         <h1>🦋天彬ICP备案｜文天玩WenTianPlay🍭</h1>
-        
+                <p>"免费" "公益" "在线" 提供备案服务</p>
+        <p>若需要“彬ICP备案号”可联系邮箱</p>          
+        <p><a href="mailto:wentianplay@qq.com" target="_blank">QQ邮箱</a> 、 <a href="mailto:wentianplay@Gmail.com" target="_blank">谷歌邮箱</a> 、 <a href="mailto:wentianplay@outlook.com" target="_blank">微软邮箱</a></p>
+    </div>
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="输入备案号（中文或数字）">
-            <button onclick="searchICP()">🔍查询</button>
+            <button onclick="handleSearch()">🔍查询</button>
         </div>
 
         <div class="result-box" id="result">
@@ -94,41 +104,25 @@
     </div>
 
     <script>
-        // ICP备案数据
-        const icpData = {
-            "20252823": {
-                number: "彬ICP备20252823号",
-                company: "文天玩数字娱乐有限公司",
-                type: "民营企业",
-                domain: "wentianplay.com",
-                pages: "/index.html, /game/*",
-                apply: "2023-05-20",
-                approve: "2023-06-01"
-            }
-        };
-
-        function searchICP() {
+        // 事件处理
+        function handleSearch() {
             const input = document.getElementById('searchInput').value;
-            const icpNumber = input.replace(/[^0-9]/g, '');
+            const result = ICP.searchICP(input);
             
-            if (icpData[icpNumber]) {
-                const data = icpData[icpNumber];
+            if (result) {
                 const resultHTML = `
                     <h3>📋备案信息</h3>
-                    <p>备案号：${data.number}</p>
-                    <p>申请单位：${data.company}</p>
-                    <p>单位性质：${data.type}</p>
-                    <p>备案域名：${data.domain}</p>
-                    <p>备案网页：${data.pages}</p>
-                    <p>申请时间：${data.apply}</p>
-                    <p>审核时间：${data.approve}</p>
+                    <p>备案号：${result.number}</p>
+                    <p>申请单位：${result.company}</p>
+                    <p>单位性质：${result.type}</p>
+                    <p>备案域名：${result.domain}</p>
+                    <p>备案网页：${result.pages}</p>
+                    <p>申请时间：${result.apply}</p>
+                    <p>审核时间：${result.approve}</p>
                     
                     <div class="copy-box">
                         <code id="icpCode">
-                            天彬ICP备案｜文天玩WenTianPlay
-                            查询"彬ICP备"备案号信息
-                            复制备案号代码到页脚处
-                            <a href="#" target="_blank">${data.number}</a>
+                            ${ICP.generateCode(result.number)}
                         </code>
                         <button class="copy-btn" onclick="copyCode()">📋复制</button>
                     </div>
@@ -140,13 +134,11 @@
             }
         }
 
+        // 复制功能
         function copyCode() {
-            const range = document.createRange();
-            range.selectNode(document.getElementById('icpCode'));
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand('copy');
-            alert('代码已复制！');
+            navigator.clipboard.writeText(
+                document.getElementById('icpCode').innerText
+            ).then(() => alert('代码已复制到剪贴板！'));
         }
 
         // 安全设置
@@ -157,6 +149,11 @@
             }
         });
     </script>
+<meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
+  <div class="footer">
+        <a href="https://WenTianPlay.TOP/" target="_blank">彬ICP备20252823号</a>
+        <p>© 2025 文天玩WenTianPlay 版权所有</p>
+    </div>
 </body>
 </html>
  
