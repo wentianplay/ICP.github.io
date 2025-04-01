@@ -37,7 +37,16 @@ const ICP = (() => {
             domain: "暂无",
             pages: "暂无*",
             apply: "2025-04-01",
-            approve: "2025-04-01"}
+            approve: "2025-04-01"
+        },
+        "20250207": {
+            number: "彬ICP备20250207号",
+            company: "雪狐狸",
+            type: "个人",
+            domain: "暂无",
+            pages: "暂无*",
+            apply: "2025-04-01",
+            approve: "2025-04-01"
     };
 
     // 查询方法
