@@ -29,7 +29,15 @@ const ICP = (() => {
             pages: "www.WenTianPlay.COM*",
             apply: "2025-03-31",
             approve: "2025-03-31"
-        }
+        },
+        "20258125": {
+            number: "彬ICP备20258125号",
+            company: "乔尹",
+            type: "个人",
+            domain: "暂无",
+            pages: "暂无*",
+            apply: "2025-04-01",
+            approve: "2025-04-01"}
     };
 
     // 查询方法
