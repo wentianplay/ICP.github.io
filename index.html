@@ -136,20 +136,6 @@
             const result = icpData[number] || { status: "未找到备案信息" };
 
             document.getElementById('result').style.display = 'block';
-            document.getElementById('codeContent').innerHTML = 
-                `<a href="${result.link || '#'}" target="_blank">彬ICP备${number}号</a>`;
-        }
-
-        function copyCode() {
-            const textarea = document.createElement('textarea');
-            textarea.value = document.getElementById('codeContent').innerText;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            alert('代码已复制！');
-        }
-
         // 自动插入备案信息
         window.onload = () => {
             document.getElementById('footer').innerHTML = 
