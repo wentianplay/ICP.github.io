@@ -47,7 +47,7 @@ const ICP = (() => {
             pages: "暂无*",
             apply: "2025-04-01",
             approve: "2025-04-01"
-    };
+    }};
 
     // 查询方法
     const search = (input) => {
