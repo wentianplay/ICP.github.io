@@ -1,156 +1,179 @@
  
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>天彬ICP备案｜文天玩WenTianPlay</title>
+       <title>天彬ICP备案｜文天玩WenTianPlay</title>
     <link rel="shortcut icon" href="https://wentianplay.com/index/API/assets/icon.ico" type="image/x-icon">
     <meta name="keywords" content="文天玩，文天玩wentianplay,天彬,天彬TianBin,ICP,彬ICP备,天彬ICP备案"/>
     <meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
     <style>
-        :root {
-            --primary: #ff7eb9;
-            --secondary: #7afcff;
-        }
         body {
-            background: url('./WTP.png') no-repeat center/cover fixed;
-            font-family: '幼圆', 'YouYuan', cursive;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            margin-top: 10vh;
-            width: 80%;
-            max-width: 680px;
-        }
-        h1 {
-            color: var(--primary);
-            text-align: center;
-            font-size: 2.5em;
-            margin: 0 0 30px 0;
-            text-shadow: 2px 2px 0px white;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
         }
         .search-box {
-            display: flex;
-            gap: 15px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
             margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        #icpInput {
-            flex: 1;
-            padding: 15px 25px;
-            border: 3px solid var(--primary);
-            border-radius: 35px;
-            font-size: 18px;
-            transition: all 0.3s;
-        }
-        #icpInput:focus {
-            border-color: var(--secondary);
-            box-shadow: 0 0 15px var(--secondary);
+        #searchInput {
+            width: 70%;
+            padding: 12px;
+            border: 2px solid #007bff;
+            border-radius: 6px;
+            font-size: 16px;
         }
         button {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 12px 24px;
+            background: #007bff;
             color: white;
-            padding: 15px 35px;
             border: none;
-            border-radius: 35px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 18px;
-            transition: transform 0.2s;
+            transition: background 0.3s;
         }
         button:hover {
-            transform: scale(1.05) rotate(2deg);
+            background: #0056b3;
         }
-        .code-box {
-            background: #fff5f8;
-            border: 2px dashed var(--primary);
-            border-radius: 15px;
+        .result-box {
+            background: white;
+            border: 1px solid #dee2e6;
             padding: 20px;
-            position: relative;
-            margin-top: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
         }
-        .copy-btn {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: var(--primary);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
         }
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        th {
+            background-color: #e9ecef;
+            width: 150px;
+            padding: 12px;
+            border: 1px solid #dee2e6;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            word-break: break-all;
+        }
+        h2, h3 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🛡️ 彬ICP备案查询系统</h1>
+    <div class="search-box">
+        <h2>天彬ICP备案查询系统</h2>
         <p>"免费" "公益" "在线" 提供备案服务</p>
         <p>若需要“彬ICP备案号”可联系邮箱</p>          
         <p><a href="mailto:wentianplay@qq.com" target="_blank">QQ邮箱</a> 、 <a href="mailto:wentianplay@Gmail.com" target="_blank">谷歌邮箱</a> 、 <a href="mailto:wentianplay@outlook.com" target="_blank">微软邮箱</a></p>
     </div>
-        <div class="search-box">
-            <input type="text" id="icpInput" placeholder="输入备案号（示例：彬ICP备20252823号 或 20252823）">
-            <button onclick="queryICP()">✨ 立即查询</button>
-        </div>
-        <div class="code-box">
-            <code id="output">&lt;a href="https://WenTianPlay.TOP" target="_blank"&gt;彬ICP备XXXXXX号&lt;/a&gt;</code>
-            <button class="copy-btn" onclick="copyCode()">📋 复制</button>
-        </div>
+        <input type="text" id="searchInput" placeholder="请输入备案号/域名/申请单位">
+        <button onclick="performSearch()">立即查询</button>
     </div>
-    <footer id="footer"></footer>
 
+    <div id="resultContainer" class="result-box"></div>
+
+    <script src="iCP.js"></script>
     <script>
-        // 备案数据库
-        const icpDatabase = {
-            "20252823": {
-                name: "文天玩WenTianPlay",
-                url: "wentianplay.com",
-                status: "2025-03-31"
-            }
-        };
+        // 初始化展示最新备案
+        window.onload = () => showAllRecords();
 
-        function queryICP() {
-            const input = document.getElementById('icpInput').value;
-            const number = input.replace(/[^\d]/g, '');
-            const result = icpDatabase[number] || { status: "未找到备案信息" };
-
-            const codeTemplate = `<a href=" 'https://WenTianPlay.TOP'}" target="_blank">彬ICP备${number}号</a>`;
-            document.getElementById('output').textContent = codeTemplate;
-            document.getElementById('footer').innerHTML = codeTemplate;
+        // 展示全部备案信息
+        function showAllRecords() {
+            const container = document.getElementById('resultContainer');
+            let html = `<h3>当前备案信息（共${Object.keys(iCPDatabase).length}条）</h3>`;
+            
+            Object.entries(iCPDatabase).forEach(([icpNum, info]) => {
+                html += `
+                    <div class="record-item">
+                        <table>
+                            <tr><th>备案编号</th><td>${info.ICP}</td></tr>
+                            <tr><th>网站名称</th><td>${info.name}</td></tr>
+                            <tr><th>备案网页</th><td>${info.link}</td></tr>
+                            <tr><th>备案域名</th><td>${info.url || '无'}</td></tr>
+                            <tr><th>申请时间</th><td>${info.op}（${info.eop}）</td></tr>
+                            <tr><th>审核时间</th><td>${getStatusBadge(info.status)}</td></tr>
+                        </table>
+                    </div>
+                    <hr class="record-divider">
+                `;
+            });
+            
+            container.innerHTML = html;
         }
 
-        function copyCode() {
-            const el = document.createElement('textarea');
-            el.value = document.getElementById('output').textContent;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('备案代码已复制到剪贴板！🎉');
+        // 查询功能
+        function performSearch() {
+            const input = document.getElementById('searchInput').value.trim();
+            const container = document.getElementById('resultContainer');
+            
+            let result;
+            if(/^\d+$/.test(input)) {
+                result = queryICP({ icpNumber: input });
+            } else if(input.includes('.')) {
+                result = queryICP({ domain: input });
+            } else {
+                result = queryICP({ applicant: input });
+            }
+
+            container.innerHTML = result ? buildResultHTML(result) : errorTemplate();
         }
 
-        // 安全防护
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                e.preventDefault();
-                document.body.innerHTML = '<h1 style="color:red">⚠️ 安全检测到非法操作！</h1>';
-            }
-        });
+        // 状态徽章
+        function getStatusBadge(status) {
+            const today = new Date();
+            const statusDate = new Date(status);
+            return statusDate > today ? 
+                '<span style="color: #28a745;">● 有效备案</span>' : 
+                '<span style="color: #dc3545;">● 已过期</span>';
+        }
+
+        // 构建结果模板
+        function buildResultHTML(data) {
+            return `
+                <h3>查询结果</h3>
+                <table>
+                    ${Object.entries(data).map(([key, val]) => `
+                        <tr><th>${getChineseLabel(key)}</th><td>${formatValue(key, val)}</td></tr>
+                    `).join('')}
+                </table>
+            `;
+        }
+
+        // 字段格式化
+        function formatValue(key, value) {
+            if (key === 'status') return getStatusBadge(value);
+            if (key === 'good') return `${value}（${dayjs(value).format('YYYY年MM月DD日')}）`;
+            return value;
+        }
+
+        // 错误模板
+        function errorTemplate() {
+            return `<div style="color: #dc3545; text-align: center; padding: 20px;">
+                <h3>⚠️ 未找到备案信息</h3>
+                <p>请检查输入内容或联系管理员</p>
+            </div>`;
+        }
+
+        // 中文字段映射（保持原有）
+        function getChineseLabel(key) { /* 同前 */ }
     </script>
-  <div class="footer">
 
+    <div class="footer">
+        <a href="https://WenTianPlay.TOP/" target="_blank">彬ICP备20252823号</a>
         <p>© 2025 文天玩WenTianPlay 版权所有</p>
     </div>
+    <meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
 </body>
 </html>
+ 
