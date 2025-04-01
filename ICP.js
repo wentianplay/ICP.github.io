@@ -11,7 +11,7 @@ const ICP = (() => {
             pages: "www.WenTianPlay.TOP*",
             apply: "2025-03-31",
             approve: "2025-03-31"
-        }
+        },
         "20254272": {
             number: "彬ICP备20254272号",
             company: "文天玩网络科技有限公司",
@@ -20,7 +20,7 @@ const ICP = (() => {
             pages: "www.WenTianPlay.NET*",
             apply: "2025-03-31",
             approve: "2025-03-31"
-        }
+        },
         "20258956": {
             number: "彬ICP备20258956号",
             company: "文天玩网络科技有限公司",
@@ -42,13 +42,11 @@ const ICP = (() => {
     return {
         searchICP: search,
         generateCode: (number) => `
-            天彬ICP备案｜文天玩WenTianPlay
-            查询"彬ICP备"备案号信息
-            复制备案号代码到页脚处
-             
-<pre>&lt;a href="https://WenTianPlay.TOP/"target="_blank" rel="noopener noreferrer"&gt;${number}&lt;/a&gt;</pre>
- 
-        `
+天彬ICP备案｜文天玩WenTianPlay
+查询"彬ICP备"备案号信息
+复制备案号代码到页脚处
+&lt;a href="https://WenTianPlay.TOP/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;${number}&lt;/a&gt;
+        `.trim()
     }
 })();
  
