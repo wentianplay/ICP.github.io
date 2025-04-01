@@ -12,7 +12,24 @@ const ICP = (() => {
             apply: "2023-05-20",
             approve: "2023-06-01"
         }
-        // 可在此扩展更多备案数据
+        "20254272": {
+            number: "彬ICP备20254272号",
+            company: "文天玩网络科技有限公司",
+            type: "民营企业",
+            domain: "wentianplay.net",
+            pages: "www.wentianplay.net",
+            apply: "2023-05-20",
+            approve: "2023-06-01"
+        }
+        "20258956": {
+            number: "彬ICP备20258956号",
+            company: "文天玩网络科技有限公司",
+            type: "民营企业",
+            domain: "wentianplay.com",
+            pages: "www.wentianplay.com",
+            apply: "2023-05-20",
+            approve: "2023-06-01"
+        }
     };
 
     // 查询方法
