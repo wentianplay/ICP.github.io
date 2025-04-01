@@ -8,16 +8,16 @@ const ICP = (() => {
             company: "文天玩网络科技有限公司",
             type: "民营企业",
             domain: "wentianplay.top",
-            pages: "www.wentianplay.top",
+            pages: "www.WenTianPlay.TOP*",
             apply: "2025-03-31",
             approve: "2025-03-31"
         }
-       "20254272": {
+        "20254272": {
             number: "彬ICP备20254272号",
             company: "文天玩网络科技有限公司",
             type: "民营企业",
             domain: "wentianplay.net",
-            pages: "www.wentianplay.net",
+            pages: "www.WenTianPlay.NET*",
             apply: "2025-03-31",
             approve: "2025-03-31"
         }
@@ -26,7 +26,7 @@ const ICP = (() => {
             company: "文天玩网络科技有限公司",
             type: "民营企业",
             domain: "wentianplay.com",
-            pages: "www.wentianplay.com",
+            pages: "www.WenTianPlay.COM*",
             apply: "2025-03-31",
             approve: "2025-03-31"
         }
@@ -45,8 +45,9 @@ const ICP = (() => {
             天彬ICP备案｜文天玩WenTianPlay
             查询"彬ICP备"备案号信息
             复制备案号代码到页脚处
-             <pre>&lt;a href="https://WenTianPlay.TOP/" target="_blank"rel="noopener noreferrer"&gt;${number}&lt;/a&gt;</pre>
-
+             
+<pre>&lt;a href="https://WenTianPlay.TOP/"target="_blank" rel="noopener noreferrer"&gt;${number}&lt;/a&gt;</pre>
+ 
         `
     }
 })();
