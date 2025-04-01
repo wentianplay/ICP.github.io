@@ -45,12 +45,7 @@ const ICP = (() => {
             天彬ICP备案｜文天玩WenTianPlay
             查询"彬ICP备"备案号信息
             复制备案号代码到页脚处
-             <pre>
-&lt;a href="https://WenTianPlay.TOP/" 
-   target="_blank" 
-   rel="noopener noreferrer"&gt;
-   ${number}&lt;/a&gt;
-</pre>
+             <pre>&lt;a href="https://WenTianPlay.TOP/" target="_blank"rel="noopener noreferrer"&gt;${number}&lt;/a&gt;</pre>
  
         `
     }
