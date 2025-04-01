@@ -32,7 +32,7 @@ const ICP = (() => {
         },
         "20258125": {
             number: "彬ICP备20258125号",
-            company: "乔尹",
+            company: "乔伊",
             type: "个人",
             domain: "暂无",
             pages: "暂无*",
