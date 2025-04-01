@@ -9,8 +9,8 @@ const ICP = (() => {
             type: "民营企业",
             domain: "wentianplay.top",
             pages: "www.wentianplay.top",
-            apply: "2023-05-20",
-            approve: "2023-06-01"
+            apply: "2025-03-31",
+            approve: "2025-03-31"
         }
         "20254272": {
             number: "彬ICP备20254272号",
@@ -18,8 +18,8 @@ const ICP = (() => {
             type: "民营企业",
             domain: "wentianplay.net",
             pages: "www.wentianplay.net",
-            apply: "2023-05-20",
-            approve: "2023-06-01"
+            apply: "2025-03-31",
+            approve: "2025-03-31"
         }
         "20258956": {
             number: "彬ICP备20258956号",
@@ -27,8 +27,8 @@ const ICP = (() => {
             type: "民营企业",
             domain: "wentianplay.com",
             pages: "www.wentianplay.com",
-            apply: "2023-05-20",
-            approve: "2023-06-01"
+            apply: "2025-03-31",
+            approve: "2025-03-31"
         }
     };
 
