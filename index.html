@@ -105,7 +105,7 @@
   </div>
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="输入备案号（彬ICP备20258956号或者20258956）">
-            <button onclick="handleSearch()">🔍查询</button>
+            <button onclick="handleSearch()">🔍查询备案信息</button>
         </div>
 
         <div class="result-box" id="result">
@@ -134,7 +134,7 @@
                         <code id="icpCode">
                             ${ICP.generateCode(result.number)}
                         </code>
-                        <button class="copy-btn" onclick="copyCode()">📋复制</button>
+                        <button class="copy-btn" onclick="copyCode()">📋复制备案代码</button>
                     </div>
                 `;
                 document.getElementById('result').innerHTML = resultHTML;
@@ -148,7 +148,7 @@
         function copyCode() {
             navigator.clipboard.writeText(
                 document.getElementById('icpCode').innerText
-            ).then(() => alert('代码已复制到剪贴板！'));
+            ).then(() => alert('备案代码已复制到剪贴板！'));
         }
 
         // 安全设置
