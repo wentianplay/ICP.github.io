@@ -43,8 +43,8 @@ const ICP = (() => {
             number: "彬ICP备20250207号",
             company: "雪狐狸",
             type: "个人",
-            domain: "暂无",
-            pages: "暂无*",
+            domain: "vkcraftminecraft.COM",
+            pages: "vkcraftminecraft.com*",
             apply: "2025-04-01",
             approve: "2025-04-01"
     }};
