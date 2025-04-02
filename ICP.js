@@ -7,8 +7,8 @@ const ICP = (() => {
             number: "彬ICP备20252823号",
             company: "文天玩网络科技有限公司",
             type: "民营企业",
-            domain: "wentianplay.top",
-            pages: "www.WenTianPlay.TOP*",
+            domain: "WenTianPlay.TOP",
+            pages: "www.wentianplay.top*",
             apply: "2025-03-31",
             approve: "2025-03-31"
         },
@@ -16,8 +16,8 @@ const ICP = (() => {
             number: "彬ICP备20254272号",
             company: "文天玩网络科技有限公司",
             type: "民营企业",
-            domain: "wentianplay.net",
-            pages: "www.WenTianPlay.NET*",
+            domain: "WenTianPlay.NET",
+            pages: "www.wentianplay.net*",
             apply: "2025-03-31",
             approve: "2025-03-31"
         },
@@ -25,8 +25,8 @@ const ICP = (() => {
             number: "彬ICP备20258956号",
             company: "文天玩网络科技有限公司",
             type: "民营企业",
-            domain: "wentianplay.com",
-            pages: "www.WenTianPlay.COM*",
+            domain: "WenTianPlay.COM",
+            pages: "www.wentianplay.com*",
             apply: "2025-03-31",
             approve: "2025-03-31"
         },
