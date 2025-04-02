@@ -110,10 +110,10 @@
             if (result) {
                 const resultHTML = `
                     <h3>📋备案信息</h3>
-                    <p>备案号：${result.number}</p>
+                    <p>备案编号：${result.number}</p>
                     <p>申请单位：${result.company}</p>
                     <p>单位性质：${result.type}</p>
-                    <p>备案域名：${result.domain}</p>
+                    <p>域名/ip：${result.domain}</p>
                     <p>备案网页：${result.pages}</p>
                     <p>申请时间：${result.apply}</p>
                     <p>审核时间：${result.approve}</p>
@@ -128,7 +128,7 @@
                 document.getElementById('result').innerHTML = resultHTML;
                 document.getElementById('result').style.display = 'block';
             } else {
-                alert('未找到备案信息');
+                alert('未找到备案信息，可抢先申请');
             }
         }
 
