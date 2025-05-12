@@ -29,6 +29,36 @@ const ICP = (() => {
             pages: "www.wentianplay.com*",
             apply: "2025-03-31",
             approve: "2025-03-31"
+         
+// ICP备案数据库
+const ICP = (() => {
+    const database = {
+        "20252823": {
+            number: "彬ICP备20252823号",
+            company: "文天玩网络科技有限公司",
+            type: "民营企业",
+            domain: "WenTianPlay.TOP",
+            pages: "www.wentianplay.top*",
+            apply: "2025-03-31",
+            approve: "2025-03-31"
+        },
+        "20254272": {
+            number: "彬ICP备20254272号",
+            company: "文天玩网络科技有限公司",
+            type: "民营企业",
+            domain: "WenTianPlay.NET",
+            pages: "www.wentianplay.net*",
+            apply: "2025-03-31",
+            approve: "2025-03-31"
+        },
+        "20258956": {
+            number: "彬ICP备20258956号",
+            company: "文天玩网络科技有限公司",
+            type: "民营企业",
+            domain: "WenTianPlay.COM",
+            pages: "www.wentianplay.com*",
+            apply: "2025-03-31",
+            approve: "2025-03-31"
         },
         "20258125": {
             number: "彬ICP备20258125号",
@@ -49,21 +79,13 @@ const ICP = (() => {
             approve: "2025-04-01"
     }};
 
+
     // 查询方法
     const search = (input) => {
-        const icpNumber = input.replace(/[^0-9]/g, '');
-        return icpDatabase[icpNumber] || null;
-    }
+        const icpNumber = input.replace(/[^\d]/g, '');
+        return database[icpNumber] || null;
+    };
 
-    // 公共API
-    return {
-        searchICP: search,
-        generateCode: (number) => `
-天彬ICP备案｜文天玩WenTianPlay
-查询"彬ICP备"备案号信息
-复制备案号代码到页脚处
-&lt;a href="https://www.wentianplay.top/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;${number}&lt;/a&gt;
-        `.trim()
-    }
+    return { search };
 })();
  
