@@ -1,4 +1,4 @@
-  
+ 
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -106,7 +106,7 @@
 <body>
     <div class="container">
         <h1><a href="https://t.me/WenTianPlayTOP" target="_blank">✈️</a> 天彬备案系统｜文天玩WenTianPlay 🍭</h1>
-        
+
         <div class="tab-container">
             <div class="tab active" onclick="switchTab('icp')">网站备案查询</div>
             <div class="tab" onclick="switchTab('wtp')">游戏角色查询</div>
@@ -140,13 +140,13 @@
     <!-- 引入JS文件 -->
     <script src="./ICP.js"></script>
     <script src="./WTP.js"></script>
-    
+
     <script>
         // 切换标签页
         function switchTab(tab) {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             event.target.classList.add('active');
-            
+
             document.getElementById('icp-search').style.display = tab === 'icp' ? 'block' : 'none';
             document.getElementById('wtp-search').style.display = tab === 'wtp' ? 'block' : 'none';
             document.getElementById('result').style.display = 'none';
@@ -169,7 +169,7 @@
         // 显示查询结果
         function showResult(data, type) {
             const resultBox = document.getElementById('result');
-            
+
             if (!data) {
                 resultBox.innerHTML = `<p style="color:red">未找到备案信息！</p>`;
                 resultBox.style.display = 'block';
@@ -198,13 +198,14 @@
                     <h3>🎮 游戏角色备案</h3>
                     <p><strong>角色ID：</strong>${data.number}</p>
                     <div class="game-stats">
-                        <p><strong>角色名称：</strong>${data.character}</p>
-                        <p><strong>所属阵营：</strong>${data.game}</p>
-                        <p><strong>所属势力：</strong>${data.server}</p>
-                        <p><strong>所属国家：</strong>${data.level}</p>
-                        <p><strong>境界：</strong>${data.faction}</p>
+                        <p><strong>角色名称：</strong>${data.name}</p>
+                        <p><strong>所属阵营：</strong>${data.character}</p>
+                        <p><strong>所属势力：</strong>${data.game}</p>
+                        <p><strong>所属王朝：</strong>${data.server}</p>
+                        <p><strong>修为境界：</strong>${data.level}</p>
+                        <p><strong>角色等级：</strong>${data.faction}</p>
                     </div>
-                    <p><strong>等级：</strong>${data.apply}</p>
+                    <p><strong>备案时间：</strong>${data.apply}</p>
                 `;
             }
 
@@ -228,6 +229,6 @@
             }
         });
     </script>
- <meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/> 
 </body>
 </html>
+ 
