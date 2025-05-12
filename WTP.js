@@ -4,37 +4,36 @@ const WTP = (() => {
     const database = {
         "G20250001": {
             number: "彬ICP备G20250001号",
-            type: "游戏角色",
-            character: "天彬",
-            game: "《天彬TianBIN》",
-            server: "天界区",
-            level: "Lv.99",
-            faction: "文天阁",
+            type: "苏天彬",
+            character: "玄士阵营",
+            game: "文天阁",
+            server: "玄天皇朝",
+            level: "祖道境",
+            faction: "至尊存在",
             apply: "2025-05-01",
             approve: "2025-05-01"
         },
         "G20250002": {
             number: "彬ICP备G20250002号",
-            type: "游戏角色",
-            character: "幽冥狐",
-            game: "《天彬TianBIN》",
-            server: "幽冥界",
-            level: "Lv.85",
-            faction: "暗影盟",
+            type: "苏文天",
+            character: "玄士阵营",
+            game: "文天阁",
+            server: "玄天皇朝",
+            level: "祖道境",
+            faction: "至高存在",
             apply: "2025-05-02",
             approve: "2025-05-02"
         },
         "G20250003": {
             number: "彬ICP备G20250003号",
-            type: "游戏角色",
-            character: "雪狐狸",
-            game: "《天彬TianBIN》",
-            server: "冰雪原",
-            level: "Lv.78",
-            faction: "自由猎人",
+            type: "苏玄彬",
+            character: "玄士阵营",
+            game: "文天阁",
+            server: "玄天皇朝",
+            level: "祖道境",
+            faction: "至高存在",
             apply: "2025-05-03",
             approve: "2025-05-03"
-        }
     };
 
     // 查询方法（支持ID或角色名查询）
