@@ -43,8 +43,17 @@ const ICP = (() => {
             type: "个人",
             domain: "vkcraftminecraft.COM",
             pages: "vkcraftminecraft.com*",
-            apply: "2025-04-01",
-            approve: "2025-04-01"
+            apply: "2025-05-13",
+            approve: "2025-05-13"
+        },
+        "20250513": {
+            number: "彬ICP备20250513号",
+            company: "文天玩网络科技有限公司",
+            type: "民营企业",
+            domain: "WenTianWan.CN",
+            pages: "www.wentianwan.cn*",
+            apply: "2025-03-31",
+            approve: "2025-03-31"
         }
     };
 
