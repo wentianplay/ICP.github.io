@@ -52,8 +52,8 @@ const ICP = (() => {
             type: "民营企业",
             domain: "WenTianWan.CN",
             pages: "www.wentianwan.cn*",
-            apply: "2025-03-31",
-            approve: "2025-03-31"
+            apply: "2025-05-13",
+            approve: "2025-05-13"
         }
     };
 
