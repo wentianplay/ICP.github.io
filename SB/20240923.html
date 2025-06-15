@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024年9月23日｜祖帝日记</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .content {
+            margin: 30px 0;
+            min-height: 300px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .nav a:hover {
+            background-color: #f5f5f5;
+        }
+        .date {
+            text-align: right;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>2024年9月23日</h1>
+    <div class="date" id="current-date">2024年9月23日</div>
+
+    <div class="content" id="diary-content">
+    在2024年中8.21 8.24 9.8 9.9 9.12 9.14 9.18 9.22 9.23的时候，有仨名同学未经我本人允许，私自乱翻我本人的柜子和床上的东西。
+    其中有一位同学偷走占有了我的东西:趣味花生*5 鸡腿*2 价值35人民币，这跟班主任举报了，但是班主任的说了些不可以实事求是，以及还说“为什么他们不偷别人，只偷你的？”直接受害者有罪论，直接说我有错什么的，还叫我就该让着他们，并同时反向指责我有错。
+    </div>
+
+    <div class="nav">
+                <a href="https://icp.wentianplay.top/sb" id="prev-link">上一页</a>
+        <a href="./20250222.html" id="next-link">下一页</a>
+    </div>
+
+    <script>
+        // 设置当前日期
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = now.toLocaleDateString('zh-CN', options);
+
+        // 这里可以添加更多功能，比如从本地存储读取日记内容
+        // 但因为是纯前端，刷新后内容会丢失
+    </script>
+</body>
+</html>
