@@ -57,6 +57,7 @@ const ICP = (() => {
         }
     };
 
+
     const search = (input) => {
         const icpNumber = input.replace(/[^\d]/g, '');
         return database[icpNumber] || null;
