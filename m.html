@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文天玩WenTianPlay备案官网</title>
+    <link rel="shortcut icon" href="https://www.wentianplay.com/index/API/assets/icon.ico">
+    <meta name="keywords" content="文天玩,天彬,ICP备案,游戏角色备案">
+    <meta name="description" content="嗯，你没看错，这是天彬的ICP备案。天彬在哪呢，听某始祖说，好像是另一个世界。祖帝就爱给人组cp,俗称icp。我们说的是天彬ICP备案，号称彬ICP备，简称彬备。"/>
+    <style>
+        body {
+            background: url('./WTP.png') no-repeat center/cover;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', '幼圆', cursive;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 245, 240, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+        }
+        h1 {
+            color: #ff69b4;
+            text-align: center;
+            text-shadow: 2px 2px #fff;
+            font-size: 1.5em;
+        }
+        .tab-container {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #ffb6c1;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+        .tab.active {
+            background: #ff69b4;
+            color: white;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 3px solid #87ceeb;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+        button {
+            background: #ffb6c1;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff69b4;
+            transform: scale(1.05);
+        }
+        .result-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+        .game-stats {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .copy-box {
+            background: #f0fff0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .disclaimer {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 30px;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><a href="https://t.me/WenTianPlay_API" target="_blank">✈️</a> 天彬备案系统｜ <a href="https://www.wentianwan.com" target="_blank">文天玩</a><a href="https://www.wentianplay.com" target="_blank">WenTianPlay</a> <a href="https://icp.wentianplay.top/sb" target="_blank">🍭</a> </h1>
+
+        <div class="tab-container">
+            <div class="tab active" onclick="switchTab('icp')">网站备案查询</div>
+            <div class="tab" onclick="switchTab('wtp')">游戏角色查询</div>
+        </div>
+
+        <!-- 网站备案查询 -->
+        <div id="icp-search">
+            <div class="search-box">
+                <input type="text" id="icpInput" placeholder="输入备案号（如：20252823 或 彬ICP备20252823号）">
+                <button onclick="searchICP()">🔍 查询备案</button>
+            </div>
+        </div>
+
+        <!-- 游戏角色查询 -->
+        <div id="wtp-search" style="display:none">
+            <div class="search-box">
+                <input type="text" id="wtpInput" placeholder="输入角色ID（如：G20250001）或角色名">
+                <button onclick="searchWTP()">🎮 查询角色</button>
+            </div>
+        </div>
+
+        <!-- 结果显示区域 -->
+        <div class="result-box" id="result"></div>
+
+        <div class="disclaimer">
+            <p>"天彬备案系统"为文天玩网络提供的非官方备案服务，仅供娱乐交流使用</p>
+            <p>© 2025 文天玩WenTianPlay 版权所有 | <a href="https://ICP.WenTianPlay.TOP/" target="_blank">彬ICP备20252823号</a></p>
+        </div>
+    </div>
+
+    <!-- 引入JS文件 -->
+    <script src="./ICP.js"></script>
+    <script src="./WTP.js"></script>
+
+    <script>
+        // 切换标签页
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.getElementById('icp-search').style.display = tab === 'icp' ? 'block' : 'none';
+            document.getElementById('wtp-search').style.display = tab === 'wtp' ? 'block' : 'none';
+            document.getElementById('result').style.display = 'none';
+        }
+
+        // 网站备案查询
+        function searchICP() {
+            const input = document.getElementById('icpInput').value;
+            const result = ICP.search(input);
+            showResult(result, 'icp');
+        }
+
+        // 游戏角色查询
+        function searchWTP() {
+            const input = document.getElementById('wtpInput').value;
+            const result = WTP.search(input);
+            showResult(result, 'wtp');
+        }
+
+        // 显示查询结果
+        function showResult(data, type) {
+            const resultBox = document.getElementById('result');
+
+            if (!data) {
+                resultBox.innerHTML = `<p style="color:red">未找到备案信息！</p>`;
+                resultBox.style.display = 'block';
+                return;
+            }
+
+            let html = '';
+            if (type === 'icp') {
+                html = `
+                    <h3>📋 网站备案信息</h3>
+                    <p><strong>备案编号：</strong>${data.number}</p>
+                    <p><strong>申请单位：</strong>${data.company}</p>
+                    <p><strong>单位性质：</strong>${data.type}</p>
+                    <p><strong>域名/IP：</strong>${data.domain}</p>
+                    <p><strong>备案时间：</strong>${data.apply} 至 ${data.approve}</p>
+                    
+                    <div class="copy-box">
+                        <code id="icpCode">
+                            &lt;a href="https://ICP.wentianplay.TOP/" target="_blank"&gt;${data.number}&lt;/a&gt;
+                        </code>
+                        <button class="copy-btn" onclick="copyCode('icpCode')">📋 复制备案代码</button>
+                    </div>
+                `;
+            } else {
+                html = `
+                    <h3>🎮 游戏角色备案</h3>
+                    <p><strong>角色ID：</strong>${data.number}</p>
+                    <div class="game-stats">
+                        <p><strong>角色名称：</strong>${data.name}</p>
+                        <p><strong>所属阵营：</strong>${data.character}</p>
+                        <p><strong>所属势力：</strong>${data.game}</p>
+                        <p><strong>所属王朝：</strong>${data.server}</p>
+                        <p><strong>修为境界：</strong>${data.level}</p>
+                        <p><strong>角色等级：</strong>${data.faction}</p>
+                    </div>
+                    <p><strong>备案时间：</strong>${data.apply}</p>
+                `;
+            }
+
+            resultBox.innerHTML = html;
+            resultBox.style.display = 'block';
+        }
+
+        // 复制代码
+        function copyCode(elementId) {
+            const code = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('已复制到剪贴板！');
+            });
+        }
+
+        // 禁用开发者工具
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+<script src="https://www.wentianplay.com/API/op.js">
+</body>
+</html>
