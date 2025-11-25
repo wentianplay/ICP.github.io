@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天彬ICP备 | 文天玩WenTianPlay备案官网</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* 主要内容区域 */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .query-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1a73e8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+        }
+        
+        .query-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .query-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
+        }
+        
+        .query-input:focus {
+            border-color: #1a73e8;
+        }
+        
+        .query-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .query-btn:hover {
+            background: #0d47a1;
+        }
+        
+        .query-hint {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* 查询结果区域 */
+        .result-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .result-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #1a73e8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .result-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .result-item {
+            padding: 15px;
+            border-left: 3px solid #1a73e8;
+            background: #f8f9fa;
+        }
+        
+        .result-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .result-value {
+            color: #333;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+        
+        .loading i {
+            font-size: 2rem;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        
+        .error-message {
+            background: #ffeaea;
+            color: #d63031;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        /* 注册区域 */
+        .register-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .register-btn {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        .register-btn:hover {
+            background: #0d47a1;
+        }
+        
+        .register-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+        
+        /* 页脚 */
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #1a73e8;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            .query-form {
+                flex-direction: column;
+            }
+            
+            .query-input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            
+            .query-btn {
+                border-radius: 5px;
+                padding: 12px;
+            }
+            
+            .result-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="logo-text">
+                        <h1>天彬ICP备</h1>
+                        <p>文天玩WenTianPlay备案官网</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> 注册联系邮箱: icp@wentianplay.top</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="main-content">
+            <div class="query-section">
+                <h2 class="section-title"><i class="fas fa-search"></i> ICP备案信息查询</h2>
+                <div class="query-form">
+                    <input type="text" class="query-input" placeholder="请输入域名或备案号进行查询" id="queryInput">
+                    <button class="query-btn" id="queryBtn">查询</button>
+                </div>
+                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(京ICP备89564228号)、数字(89564228)、中文数字(八九五六四二二八)</p>
+                
+                <div class="loading" id="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>正在查询中，请稍候...</p>
+                </div>
+                
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+            
+            <div class="result-section" id="resultSection">
+                <h2 class="result-title"><i class="fas fa-file-alt"></i> 查询结果</h2>
+                <div class="result-content">
+                    <div class="result-item">
+                        <div class="result-label">主办单位名称</div>
+                        <div class="result-value" id="companyName">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案/许可证号</div>
+                        <div class="result-value" id="icpNumber">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">网站域名</div>
+                        <div class="result-value" id="domainName">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">审核日期</div>
+                        <div class="result-value" id="approveDate">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">网站名称</div>
+                        <div class="result-value" id="websiteName">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案状态</div>
+                        <div class="result-value" id="status">--</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="register-section">
+                <h2 class="section-title"><i class="fas fa-user-plus"></i> 免费ICP备案注册</h2>
+                <p>天彬ICP备为您提供免费的第三方ICP备案服务，助力您的网站合规运营。</p>
+                <p>注册请联系邮箱：<strong>icp@wentianplay.top</strong>，一个域名仅限一个备案。</p>
+                <a href="mailto:icp@wentianplay.top?subject=ICP备案注册申请&body=请提供以下信息：%0D%0A1. 域名：%0D%0A2. 主办单位名称：%0D%0A3. 联系人姓名：%0D%0A4. 联系电话：" class="register-btn">立即注册</a>
+                
+                <div class="register-info">
+                    <p><strong>注册须知：</strong></p>
+                    <p>1. 本站为第三方ICP备案服务平台，免费提供服务</p>
+                    <p>2. 每个域名仅可申请一个备案号</p>
+                    <p>3. 提交申请后，我们将在3个工作日内审核并回复</p>
+                    <p>4. 备案信息变更请及时联系我们更新</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.wentianplay.net/team.html">关于我们</a>
+            </div>
+            <p class="copyright">© 2025 天彬ICP备 | 文天玩WenTianPlay 版权所有</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const queryBtn = document.getElementById('queryBtn');
+            const queryInput = document.getElementById('queryInput');
+            const resultSection = document.getElementById('resultSection');
+            const loading = document.getElementById('loading');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // 中文数字转阿拉伯数字
+            function chineseToNumber(chineseStr) {
+                const chineseNumbers = {
+                    '零': 0, '一': 1, '二': 2, '三': 3, '四': 4,
+                    '五': 5, '六': 6, '七': 7, '八': 8, '九': 9
+                };
+                
+                let result = '';
+                for (let char of chineseStr) {
+                    if (chineseNumbers[char] !== undefined) {
+                        result += chineseNumbers[char];
+                    } else {
+                        // 如果遇到非数字字符，保留原字符
+                        result += char;
+                    }
+                }
+                return result;
+            }
+            
+            // 标准化查询输入
+            function normalizeQuery(query) {
+                // 去除空格
+                query = query.replace(/\s+/g, '');
+                
+                // 如果是中文数字，转换为阿拉伯数字
+                if (/[零一二三四五六七八九]/.test(query)) {
+                    query = chineseToNumber(query);
+                }
+                
+                // 如果是纯数字，添加"京ICP备"前缀和后缀"号"
+                if (/^\d+$/.test(query)) {
+                    query = `京ICP备${query}号`;
+                }
+                
+                return query;
+            }
+            
+            queryBtn.addEventListener('click', function() {
+                const query = queryInput.value.trim();
+                
+                if (query.length === 0) {
+                    showError('请输入要查询的域名或备案号');
+                    return;
+                }
+                
+                // 标准化查询输入
+                const normalizedQuery = normalizeQuery(query);
+                
+                loading.style.display = 'block';
+                errorMessage.style.display = 'none';
+                resultSection.style.display = 'none';
+                
+                // 使用您的API端点
+                fetch(`https://www.wentianplay.net/api/icp.json?domain=${encodeURIComponent(normalizedQuery)}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('网络响应不正常');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        loading.style.display = 'none';
+                        
+                        if (data && data.success) {
+                            displayResults(data.data);
+                            resultSection.style.display = 'block';
+                        } else {
+                            showError(data.message || '未找到相关的备案信息');
+                        }
+                    })
+                    .catch(error => {
+                        loading.style.display = 'none';
+                        showError('查询失败：' + error.message);
+                        console.error('查询错误:', error);
+                    });
+            });
+            
+            queryInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    queryBtn.click();
+                }
+            });
+            
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+            }
+            
+            function displayResults(data) {
+                document.getElementById('companyName').textContent = data.companyName || '--';
+                document.getElementById('icpNumber').textContent = data.icpNumber || '--';
+                document.getElementById('domainName').textContent = data.domainName || '--';
+                document.getElementById('approveDate').textContent = data.approveDate || '--';
+                document.getElementById('websiteName').textContent = data.websiteName || '--';
+                document.getElementById('status').textContent = data.status || '--';
+            }
+        });
+    </script>
+</body>
+</html>
