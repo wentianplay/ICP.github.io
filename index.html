@@ -12,19 +12,19 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-        
+
         body {
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* 头部样式 */
         header {
             background: linear-gradient(135deg, #1a73e8, #0d47a1);
@@ -32,38 +32,38 @@
             padding: 20px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo i {
             font-size: 2.5rem;
             margin-right: 15px;
         }
-        
+
         .logo-text h1 {
             font-size: 1.8rem;
             font-weight: 600;
         }
-        
+
         .logo-text p {
             font-size: 0.9rem;
             opacity: 0.9;
         }
-        
+
         /* 主要内容区域 */
         .main-content {
             padding: 40px 0;
         }
-        
+
         .query-section {
             background: white;
             border-radius: 10px;
@@ -71,7 +71,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 30px;
         }
-        
+
         .section-title {
             font-size: 1.5rem;
             margin-bottom: 20px;
@@ -79,16 +79,16 @@
             display: flex;
             align-items: center;
         }
-        
+
         .section-title i {
             margin-right: 10px;
         }
-        
+
         .query-form {
             display: flex;
             margin-bottom: 20px;
         }
-        
+
         .query-input {
             flex: 1;
             padding: 12px 15px;
@@ -98,11 +98,11 @@
             outline: none;
             transition: border 0.3s;
         }
-        
+
         .query-input:focus {
             border-color: #1a73e8;
         }
-        
+
         .query-btn {
             background: #1a73e8;
             color: white;
@@ -113,16 +113,16 @@
             font-size: 1rem;
             transition: background 0.3s;
         }
-        
+
         .query-btn:hover {
             background: #0d47a1;
         }
-        
+
         .query-hint {
             font-size: 0.9rem;
             color: #666;
         }
-        
+
         /* 查询结果区域 */
         .result-section {
             background: white;
@@ -132,7 +132,7 @@
             margin-bottom: 30px;
             display: none;
         }
-        
+
         .result-title {
             font-size: 1.3rem;
             margin-bottom: 20px;
@@ -140,41 +140,41 @@
             display: flex;
             align-items: center;
         }
-        
+
         .result-content {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .result-item {
             padding: 15px;
             border-left: 3px solid #1a73e8;
             background: #f8f9fa;
         }
-        
+
         .result-label {
             font-weight: 600;
             margin-bottom: 5px;
             color: #555;
         }
-        
+
         .result-value {
             color: #333;
         }
-        
+
         .loading {
             text-align: center;
             padding: 20px;
             display: none;
         }
-        
+
         .loading i {
             font-size: 2rem;
             color: #1a73e8;
             margin-bottom: 10px;
         }
-        
+
         .error-message {
             background: #ffeaea;
             color: #d63031;
@@ -183,7 +183,7 @@
             margin-top: 15px;
             display: none;
         }
-        
+
         /* 注册区域 */
         .register-section {
             background: white;
@@ -192,7 +192,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
-        
+
         .register-btn {
             display: inline-block;
             background: #1a73e8;
@@ -204,11 +204,11 @@
             margin-top: 15px;
             transition: background 0.3s;
         }
-        
+
         .register-btn:hover {
             background: #0d47a1;
         }
-        
+
         .register-info {
             margin-top: 20px;
             padding: 15px;
@@ -216,7 +216,7 @@
             border-radius: 5px;
             font-size: 0.95rem;
         }
-        
+
         /* 页脚 */
         footer {
             background: #2c3e50;
@@ -225,55 +225,55 @@
             text-align: center;
             margin-top: 40px;
         }
-        
+
         .footer-links {
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-        
+
         .footer-links a {
             color: #ecf0f1;
             text-decoration: none;
             margin: 0 15px;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
             color: #1a73e8;
         }
-        
+
         .copyright {
             font-size: 0.9rem;
             opacity: 0.8;
         }
-        
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .logo {
                 margin-bottom: 15px;
             }
-            
+
             .query-form {
                 flex-direction: column;
             }
-            
+
             .query-input {
                 border-radius: 5px;
                 margin-bottom: 10px;
             }
-            
+
             .query-btn {
                 border-radius: 5px;
                 padding: 12px;
             }
-            
+
             .result-content {
                 grid-template-columns: 1fr;
             }
@@ -297,7 +297,7 @@
             </div>
         </div>
     </header>
-    
+
     <div class="container">
         <section class="main-content">
             <div class="query-section">
@@ -306,16 +306,16 @@
                     <input type="text" class="query-input" placeholder="请输入域名或备案号进行查询" id="queryInput">
                     <button class="query-btn" id="queryBtn">查询</button>
                 </div>
-                <p class="query-hint">请输入完整的域名或备案号进行查询，例如：wentianplay.com 或 京ICP备89564228号</p>
-                
+                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(京ICP备89564228号)、数字(89564228)、中文数字(八九五六四二二八)</p>
+
                 <div class="loading" id="loading">
                     <i class="fas fa-spinner fa-spin"></i>
                     <p>正在查询中，请稍候...</p>
                 </div>
-                
+
                 <div class="error-message" id="errorMessage"></div>
             </div>
-            
+
             <div class="result-section" id="resultSection">
                 <h2 class="result-title"><i class="fas fa-file-alt"></i> 查询结果</h2>
                 <div class="result-content">
@@ -345,13 +345,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="register-section">
                 <h2 class="section-title"><i class="fas fa-user-plus"></i> 免费ICP备案注册</h2>
                 <p>天彬ICP备为您提供免费的第三方ICP备案服务，助力您的网站合规运营。</p>
                 <p>注册请联系邮箱：<strong>icp@wentianplay.top</strong>，一个域名仅限一个备案。</p>
                 <a href="mailto:icp@wentianplay.top?subject=ICP备案注册申请&body=请提供以下信息：%0D%0A1. 域名：%0D%0A2. 主办单位名称：%0D%0A3. 联系人姓名：%0D%0A4. 联系电话：" class="register-btn">立即注册</a>
-                
+
                 <div class="register-info">
                     <p><strong>注册须知：</strong></p>
                     <p>1. 本站为第三方ICP备案服务平台，免费提供服务</p>
@@ -362,7 +362,7 @@
             </div>
         </section>
     </div>
-    
+
     <footer>
         <div class="container">
             <div class="footer-links">
@@ -371,7 +371,7 @@
             <p class="copyright">© 2025 天彬ICP备 | 文天玩WenTianPlay 版权所有</p>
         </div>
     </footer>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const queryBtn = document.getElementById('queryBtn');
@@ -379,23 +379,61 @@
             const resultSection = document.getElementById('resultSection');
             const loading = document.getElementById('loading');
             const errorMessage = document.getElementById('errorMessage');
-            
-          
+
+            // 中文数字转阿拉伯数字
+            function chineseToNumber(chineseStr) {
+                const chineseNumbers = {
+                    '零': 0, '一': 1, '二': 2, '三': 3, '四': 4,
+                    '五': 5, '六': 6, '七': 7, '八': 8, '九': 9
+                };
+
+                let result = '';
+                for (let char of chineseStr) {
+                    if (chineseNumbers[char] !== undefined) {
+                        result += chineseNumbers[char];
+                    } else {
+                        // 如果遇到非数字字符，保留原字符
+                        result += char;
+                    }
+                }
+                return result;
+            }
+
+            // 标准化查询输入
+            function normalizeQuery(query) {
+                // 去除空格
+                query = query.replace(/\s+/g, '');
+
+                // 如果是中文数字，转换为阿拉伯数字
+                if (/[零一二三四五六七八九]/.test(query)) {
+                    query = chineseToNumber(query);
+                }
+
+                // 如果是纯数字，添加"京ICP备"前缀和后缀"号"
+                if (/^\d+$/.test(query)) {
+                    query = `京ICP备${query}号`;
+                }
+
+                return query;
+            }
+
             queryBtn.addEventListener('click', function() {
                 const query = queryInput.value.trim();
-                
+
                 if (query.length === 0) {
                     showError('请输入要查询的域名或备案号');
                     return;
                 }
-                
-             
+
+                // 标准化查询输入
+                const normalizedQuery = normalizeQuery(query);
+
                 loading.style.display = 'block';
                 errorMessage.style.display = 'none';
                 resultSection.style.display = 'none';
-                
-             
-                fetch(`https://www.wentianplay.net/api/icp.json?domain=${encodeURIComponent(query)}`)
+
+                // 使用您的API端点
+                fetch(`https://www.wentianplay.net/api/icp.json?domain=${encodeURIComponent(normalizedQuery)}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('网络响应不正常');
@@ -404,10 +442,9 @@
                     })
                     .then(data => {
                         loading.style.display = 'none';
-                        
+
                         if (data && data.success) {
-               
-            displayResults(data.data);
+                            displayResults(data.data);
                             resultSection.style.display = 'block';
                         } else {
                             showError(data.message || '未找到相关的备案信息');
@@ -419,21 +456,18 @@
                         console.error('查询错误:', error);
                     });
             });
-            
-          
+
             queryInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     queryBtn.click();
                 }
             });
-            
-         
+
             function showError(message) {
                 errorMessage.textContent = message;
                 errorMessage.style.display = 'block';
             }
-            
-      
+
             function displayResults(data) {
                 document.getElementById('companyName').textContent = data.companyName || '--';
                 document.getElementById('icpNumber').textContent = data.icpNumber || '--';
