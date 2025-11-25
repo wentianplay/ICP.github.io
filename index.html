@@ -306,7 +306,7 @@
                     <input type="text" class="query-input" placeholder="请输入域名或备案号进行查询" id="queryInput">
                     <button class="query-btn" id="queryBtn">查询</button>
                 </div>
-                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(京ICP备89564228号)、数字(89564228)、中文数字(八九五六四二二八)</p>
+                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(彬ICP备89564228号)、数字(89564228)、中文数字(八九五六四二二八)</p>
 
                 <div class="loading" id="loading">
                     <i class="fas fa-spinner fa-spin"></i>
@@ -409,9 +409,9 @@
                     query = chineseToNumber(query);
                 }
 
-                // 如果是纯数字，添加"京ICP备"前缀和后缀"号"
+                // 如果是纯数字，添加"彬ICP备"前缀和后缀"号"
                 if (/^\d+$/.test(query)) {
-                    query = `京ICP备${query}号`;
+                    query = `彬ICP备${query}号`;
                 }
 
                 return query;
