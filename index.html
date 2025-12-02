@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天彬ICP备案 | 文天玩WenTianPlay备案官网</title>
+    <title>天彬ICP备 | 文天玩WenTianPlay备案官网</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * {
@@ -138,6 +138,7 @@
             color: #666;
         }
 
+        /* 查询结果区域 */
         .result-section {
             background: white;
             border-radius: 10px;
@@ -198,6 +199,7 @@
             display: none;
         }
 
+        /* 注册区域 */
         .register-section {
             background: white;
             border-radius: 10px;
@@ -230,6 +232,7 @@
             font-size: 0.95rem;
         }
 
+        /* 页脚 */
         footer {
             background: #2c3e50;
             color: #ecf0f1;
@@ -261,6 +264,7 @@
             opacity: 0.8;
         }
 
+        /* 响应式设计 */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -289,44 +293,7 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style><style>
-    /* 优化结果内容区域的网格布局 */
-    .result-content {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    /* 确保结果项高度一致 */
-    .result-item {
-        min-height: 100px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 15px;
-        border-left: 3px solid #1a73e8;
-        background: #f8f9fa;
-    }
-
-    /* 响应式布局调整 */
-    @media (max-width: 1200px) {
-        .result-content {
-            grid-template-columns: repeat(3, minmax(200px, 1fr));
-        }
-    }
-
-    @media (max-width: 900px) {
-        .result-content {
-            grid-template-columns: repeat(2, minmax(200px, 1fr));
-        }
-    }
-
-    @media (max-width: 600px) {
-        .result-content {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
+    </style>
 </head>
 <body>
     <header>
@@ -353,7 +320,7 @@
                     <input type="text" class="query-input" placeholder="请输入域名或备案号进行查询" id="queryInput">
                     <button class="query-btn" id="queryBtn">查询</button>
                 </div>
-                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(彬ICP备20240503号)、数字(20240503)</p>
+                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(彬ICP备20240503号)、数字(20240503)、中文数字(二零二四零五零三)</p>
 
                 <div class="loading" id="loading">
                     <p>正在查询中，请稍候...</p>
@@ -366,7 +333,7 @@
                 <h2 class="result-title">查询结果</h2>
                 <div class="result-content">
                     <div class="result-item">
-                        <div class="result-label">所有人</div>
+                        <div class="result-label">所有者</div>
                         <div class="result-value" id="companyName">--</div>
                     </div>
                     <div class="result-item">
@@ -378,24 +345,20 @@
                         <div class="result-value" id="domainName">--</div>
                     </div>
                     <div class="result-item">
-                        <div class="result-label">审核日期</div>
+                        <div class="result-label">网站名称</div>
                         <div class="result-value" id="approveDate">--</div>
                     </div>
                     <div class="result-item">
-                        <div class="result-label">网站名称</div>
-                        <div class="result-value" id="websiteName">--</div>
-                    </div>
-                    <div class="result-item">
                         <div class="result-label">网站描述</div>
-                        <div class="result-value" id="dnsweb">--</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-label">备案时间</div>
-                        <div class="result-value" id="recordTime">--</div>
+                        <div class="result-value" id="websiteName">--</div>
                     </div>
                     <div class="result-item">
                         <div class="result-label">备案状态</div>
                         <div class="result-value" id="status">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案时间</div>
+                        <div class="result-value" id="recordTime">--</div>
                     </div>
                 </div>
             </div>
@@ -419,11 +382,11 @@
 
     <footer>
         <div class="container">
-            <a href="https://icp.wentianplay.top" target="_blank">彬ICP备20250331号</a>
+            <a href="icp.html" target="_blank">彬ICP备20250331号</a>
             <div class="footer-links">
-                <a href="https://www.WenTianPlay.cn">关于我们</a>
+                <a href="about.html">关于我们</a>
             </div>
-            <p class="copyright">© 2025 天彬ICP备案 | 文天玩WenTianPlay 版权所有</p>
+            <p class="copyright">© 2025 天彬ICP备 | 文天玩WenTianPlay 版权所有</p>
         </div>
     </footer>
 
@@ -438,7 +401,7 @@
 
             let currentData = null;
 
-    
+            // 中文数字转阿拉伯数字
             function chineseToNumber(chineseStr) {
                 const chineseNumbers = {
                     '零': 0, '一': 1, '二': 2, '三': 3, '四': 4,
@@ -456,7 +419,7 @@
                 return result;
             }
 
-           
+            // 标准化查询输入
             function normalizeQuery(query) {
                 query = query.replace(/\s+/g, '');
 
@@ -471,7 +434,7 @@
                 return query;
             }
 
-           
+            // 更新注册邮件链接
             function updateRegisterLink(data) {
                 if (data) {
                     const subject = '天彬ICP备案注册申请';
@@ -494,7 +457,7 @@
                 errorMessage.style.display = 'none';
                 resultSection.style.display = 'none';
 
-              
+                // 先加载本地配置文件
                 fetch('ICP.json')
                     .then(response => {
                         if (!response.ok) {
@@ -503,7 +466,7 @@
                         return response.json();
                     })
                     .then(config => {
-                     
+                        // 使用配置中的远程数据URL
                         return fetch(config.dataUrl);
                     })
                     .then(response => {
@@ -515,7 +478,7 @@
                     .then(data => {
                         loading.style.display = 'none';
                         
-                    
+                        // 查找匹配的数据
                         const result = findMatchingData(data, normalizedQuery);
                         
                         if (result) {
@@ -564,7 +527,6 @@
                 document.getElementById('websiteName').textContent = data.websiteName || '--';
                 document.getElementById('status').textContent = data.status || '--';
                 document.getElementById('recordTime').textContent = data.recordTime || '--';
-               document.getElementById('status').textContent = data.status || '--';
             }
         });
     </script>
