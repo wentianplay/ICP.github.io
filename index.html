@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天彬ICP备 | 文天玩WenTianPlay备案官网</title>
+    <title>天彬ICP备案 | 文天玩WenTianPlay备案官网</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * {
@@ -346,19 +346,19 @@
                     </div>
                     <div class="result-item">
                         <div class="result-label">网站名称</div>
-                        <div class="result-value" id="approveDate">--</div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-label">网站描述</div>
                         <div class="result-value" id="websiteName">--</div>
-                    </div>
+                   </div>
                     <div class="result-item">
-                        <div class="result-label">备案状态</div>
-                        <div class="result-value" id="status">--</div>
+                        <div class="result-label">审核描述</div>
+                        <div class="result-value" id="description">--</div>
                     </div>
                     <div class="result-item">
                         <div class="result-label">备案时间</div>
                         <div class="result-value" id="recordTime">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案状态</div>
+                        <div class="result-value" id="status">--</div>
                     </div>
                 </div>
             </div>
@@ -523,7 +523,7 @@
                 document.getElementById('companyName').textContent = data.companyName || '--';
                 document.getElementById('icpNumber').textContent = data.icpNumber || '--';
                 document.getElementById('domainName').textContent = data.domainName || '--';
-                document.getElementById('approveDate').textContent = data.approveDate || '--';
+                document.getElementById('description').textContent = data.description || '--';
                 document.getElementById('websiteName').textContent = data.websiteName || '--';
                 document.getElementById('status').textContent = data.status || '--';
                 document.getElementById('recordTime').textContent = data.recordTime || '--';
