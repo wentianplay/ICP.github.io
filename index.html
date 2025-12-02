@@ -435,7 +435,7 @@
                 resultSection.style.display = 'none';
 
                 // 使用您的API端点
-                fetch(`https://www.wentianplay.net/api/icp.json?domain=${encodeURIComponent(normalizedQuery)}`)
+                fetch(`ICP.json?domain=${encodeURIComponent(normalizedQuery)}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('网络响应不正常');
