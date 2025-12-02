@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>天彬ICP备案 | 文天玩WenTianPlay备案官网</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI','Microsoft YaHei',sans-serif;}
+        body{background-color:#f5f7fa;color:#333;line-height:1.6;}
+        .container{max-width:100%;margin:0 auto;padding:0 15px;}
+        header{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:white;padding:15px 0;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+        .header-content{display:block;text-align:center;}
+        .logo{display:block;margin-bottom:10px;}
+        .logo i{font-size:2rem;margin-right:10px;}
+        .logo-text h1{font-size:1.5rem;font-weight:600;}
+        .logo-text p{font-size:0.8rem;opacity:0.9;}
+        .contact-info p{font-size:0.9rem;}
+        .main-content{padding:20px 0;}
+        .query-section{background:white;border-radius:10px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);margin-bottom:20px;}
+        .section-title{font-size:1.3rem;margin-bottom:15px;color:#1a73e8;display:flex;align-items:center;justify-content:center;}
+        .section-title i{margin-right:10px;}
+        .query-form{display:block;margin-bottom:15px;}
+        .query-input{width:100%;padding:12px 15px;border:1px solid #ddd;border-radius:5px;font-size:1rem;outline:none;transition:border 0.3s;margin-bottom:10px;}
+        .query-input:focus{border-color:#1a73e8;}
+        .query-btn{width:100%;background:#1a73e8;color:white;border:none;padding:12px;border-radius:5px;cursor:pointer;font-size:1rem;transition:background 0.3s;}
+        .query-btn:hover{background:#0d47a1;}
+        .query-hint{font-size:0.8rem;color:#666;text-align:center;}
+        .result-section{background:white;border-radius:10px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);margin-bottom:20px;display:none;}
+        .result-title{font-size:1.2rem;margin-bottom:15px;color:#1a73e8;display:flex;align-items:center;justify-content:center;}
+        .result-content{display:block;}
+        .result-item{padding:12px;border-left:3px solid #1a73e8;background:#f8f9fa;margin-bottom:10px;}
+        .result-label{font-weight:600;margin-bottom:5px;color:#555;font-size:0.9rem;}
+        .result-value{color:#333;font-size:0.9rem;}
+        .loading{text-align:center;padding:15px;display:none;}
+        .loading i{font-size:1.5rem;color:#1a73e8;margin-bottom:10px;}
+        .error-message{background:#ffeaea;color:#d63031;padding:12px;border-radius:5px;margin-top:12px;display:none;font-size:0.9rem;}
+        .register-section{background:white;border-radius:10px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:center;}
+        .register-btn{display:block;background:#1a73e8;color:white;text-decoration:none;padding:12px;border-radius:5px;font-size:1rem;margin-top:15px;transition:background 0.3s;}
+        .register-btn:hover{background:#0d47a1;}
+        .register-info{margin-top:15px;padding:12px;background:#f8f9fa;border-radius:5px;font-size:0.85rem;}
+        footer{background:#2c3e50;color:#ecf0f1;padding:20px 0;text-align:center;margin-top:30px;}
+        .footer-links{display:block;margin-bottom:15px;}
+        .footer-links a{color:#ecf0f1;text-decoration:none;margin:0 10px;transition:color 0.3s;display:block;margin-bottom:10px;}
+        .footer-links a:hover{color:#1a73e8;}
+        .copyright{font-size:0.8rem;opacity:0.8;}
+    </style>
+    <script>
+        document.addEventListener("contextmenu",function(e){e.preventDefault();});
+        document.addEventListener("keydown",function(e){if(e.key==="F12"){e.preventDefault();}});
+        document.addEventListener("copy",function(e){e.preventDefault();});
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-text">
+                        <h1>天彬ICP备</h1>
+                        <p>文天玩WenTianPlay备案官网</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p>注册联系邮箱: icp@wentianplay.top</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section class="main-content">
+            <div class="query-section">
+                <h2 class="section-title">ICP备案信息查询</h2>
+                <div class="query-form">
+                    <input type="text" class="query-input" placeholder="请输入域名或备案号进行查询" id="queryInput">
+                    <button class="query-btn" id="queryBtn">查询</button>
+                </div>
+                <p class="query-hint">支持查询格式：域名(wentianplay.com)、备案号(彬ICP备20240503号)、数字(20240503)、中文数字(二零二四零五零三)</p>
+                <div class="loading" id="loading">
+                    <p>正在查询中，请稍候...</p>
+                </div>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+            <div class="result-section" id="resultSection">
+                <h2 class="result-title">查询结果</h2>
+                <div class="result-content">
+                    <div class="result-item">
+                        <div class="result-label">所有者</div>
+                        <div class="result-value" id="companyName">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案号码</div>
+                        <div class="result-value" id="icpNumber">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">网站域名</div>
+                        <div class="result-value" id="domainName">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">网站名称</div>
+                        <div class="result-value" id="websiteName">--</div>
+                   </div>
+                    <div class="result-item">
+                        <div class="result-label">网站描述</div>
+                        <div class="result-value" id="description">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案时间</div>
+                        <div class="result-value" id="recordTime">--</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">备案状态</div>
+                        <div class="result-value" id="status">--</div>
+                    </div>
+                </div>
+            </div>
+            <div class="register-section">
+                <h2 class="section-title">免费ICP备案注册</h2>
+                <p>天彬ICP备为您提供免费的第三方ICP备案服务，助力您的网站合规运营。</p>
+                <p>注册请联系邮箱：<strong>icp@wentianplay.top</strong>，一个域名仅限一个备案。</p>
+                <a href="mailto:icp@wentianplay.top?subject=天彬ICP备案注册申请&body=探险者，请提供以下信息%0D%0A备案号码：%0D%0A网站名称：%0D%0A网站域名：%0D%0A网站描述：%0D%0A所有者：%0D%0A联系方式：" class="register-btn" id="registerBtn">立即注册</a>
+                <div class="register-info">
+                    <p><strong>注册须知：</strong></p>
+                    <p>1. 本站为第三方ICP备案服务平台，免费提供服务</p>
+                    <p>2. 每个域名仅可申请一个备案号</p>
+                    <p>3. 提交申请后，我们将在3个工作日内审核并回复</p>
+                    <p>4. 备案信息变更请及时联系我们更新</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <a href="https://icp.wentianplay.top" target="_blank">彬ICP备20250331号</a>
+            <div class="footer-links">
+                <a href="https://www.wentianplay.cn">关于我们</a>
+            </div>
+            <p class="copyright">© 2025 天彬ICP备 | 文天玩WenTianPlay 版权所有</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const queryBtn=document.getElementById('queryBtn');
+            const queryInput=document.getElementById('queryInput');
+            const resultSection=document.getElementById('resultSection');
+            const loading=document.getElementById('loading');
+            const errorMessage=document.getElementById('errorMessage');
+            const registerBtn=document.getElementById('registerBtn');
+            let currentData=null;
+            function chineseToNumber(chineseStr){
+                const chineseNumbers={'零':0,'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9};
+                let result='';
+                for(let char of chineseStr){
+                    if(chineseNumbers[char]!==undefined){result+=chineseNumbers[char];}
+                    else{result+=char;}
+                }
+                return result;
+            }
+            function normalizeQuery(query){
+                query=query.replace(/\s+/g,'');
+                if(/[零一二三四五六七八九]/.test(query)){query=chineseToNumber(query);}
+                if(/^\d+$/.test(query)){query=`彬ICP备${query}号`;}
+                return query;
+            }
+            function updateRegisterLink(data){
+                if(data){
+                    const subject='天彬ICP备案注册申请';
+                    const body=`探险者，请提供以下信息%0D%0A备案号码：${encodeURIComponent(data.icpNumber||'')}%0D%0A网站名称：${encodeURIComponent(data.websiteName||'')}%0D%0A网站域名：${encodeURIComponent(data.domainName||'')}%0D%0A网站描述：${encodeURIComponent(data.description||'')}%0D%0A所有者：${encodeURIComponent(data.companyName||'')}%0D%0A联系方式：`;
+                    registerBtn.href=`mailto:icp@wentianplay.top?subject=${subject}&body=${body}`;
+                }
+            }
+            queryBtn.addEventListener('click',function(){
+                const query=queryInput.value.trim();
+                if(query.length===0){showError('请输入要查询的域名或备案号');return;}
+                const normalizedQuery=normalizeQuery(query);
+                loading.style.display='block';
+                errorMessage.style.display='none';
+                resultSection.style.display='none';
+                fetch('ICP.json').then(response=>{
+                    if(!response.ok){throw new Error('配置文件加载失败');}
+                    return response.json();
+                }).then(config=>{return fetch(config.dataUrl);})
+                .then(response=>{
+                    if(!response.ok){throw new Error('数据加载失败');}
+                    return response.json();
+                }).then(data=>{
+                    loading.style.display='none';
+                    const result=findMatchingData(data,normalizedQuery);
+                    if(result){
+                        currentData=result;
+                        displayResults(result);
+                        updateRegisterLink(result);
+                        resultSection.style.display='block';
+                    }else{showError('未找到相关的备案信息');}
+                }).catch(error=>{
+                    loading.style.display='none';
+                    showError('查询失败：'+error.message);
+                    console.error('查询错误:',error);
+                });
+            });
+            queryInput.addEventListener('keypress',function(e){if(e.key==='Enter'){queryBtn.click();}});
+            function findMatchingData(data,query){
+                for(const[domain,info] of Object.entries(data)){
+                    if(domain.toLowerCase().includes(query.toLowerCase())||info.icpNumber.includes(query)||info.domainName.toLowerCase().includes(query.toLowerCase())){
+                        return info;
+                    }
+                }
+                return null;
+            }
+            function showError(message){
+                errorMessage.textContent=message;
+                errorMessage.style.display='block';
+            }
+            function displayResults(data){
+                document.getElementById('companyName').textContent=data.companyName||'--';
+                document.getElementById('icpNumber').textContent=data.icpNumber||'--';
+                document.getElementById('domainName').textContent=data.domainName||'--';
+                document.getElementById('description').textContent=data.description||'--';
+                document.getElementById('websiteName').textContent=data.websiteName||'--';
+                document.getElementById('status').textContent=data.status||'--';
+                document.getElementById('recordTime').textContent=data.recordTime||'--';
+            }
+        });
+    </script>
+</body>
+</html>
