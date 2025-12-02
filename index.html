@@ -289,7 +289,44 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+    </style><style>
+    /* 优化结果内容区域的网格布局 */
+    .result-content {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    /* 确保结果项高度一致 */
+    .result-item {
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        border-left: 3px solid #1a73e8;
+        background: #f8f9fa;
+    }
+
+    /* 响应式布局调整 */
+    @media (max-width: 1200px) {
+        .result-content {
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+        }
+    }
+
+    @media (max-width: 900px) {
+        .result-content {
+            grid-template-columns: repeat(2, minmax(200px, 1fr));
+        }
+    }
+
+    @media (max-width: 600px) {
+        .result-content {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 </head>
 <body>
     <header>
