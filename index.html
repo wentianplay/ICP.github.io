@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天彬ICP备 | 文天玩WenTianPlay备案官网</title>
+    <title>天彬ICP备案 | 文天玩WenTianPlay备案官网</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * {
@@ -123,7 +123,6 @@
             color: #666;
         }
 
-        /* 查询结果区域 */
         .result-section {
             background: white;
             border-radius: 10px;
@@ -184,7 +183,6 @@
             display: none;
         }
 
-        /* 注册区域 */
         .register-section {
             background: white;
             border-radius: 10px;
@@ -217,7 +215,6 @@
             font-size: 0.95rem;
         }
 
-        /* 页脚 */
         footer {
             background: #2c3e50;
             color: #ecf0f1;
@@ -249,7 +246,6 @@
             opacity: 0.8;
         }
 
-        /* 响应式设计 */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -344,6 +340,8 @@
                     <div class="result-item">
                         <div class="result-label">备案时间</div>
                         <div class="result-value" id="recordTime">--</div>
+                        <div class="result-label">备案状态</div>
+                        <div class="result-value" id="Time">--</div>
                     </div>
                 </div>
             </div>
@@ -367,11 +365,11 @@
 
     <footer>
         <div class="container">
-            <a href="icp.html" target="_blank">彬ICP备20250331号</a>
+            <a href="https://icp.wentianplay.top" target="_blank">彬ICP备20250331号</a>
             <div class="footer-links">
-                <a href="about.html">关于我们</a>
+                <a href="https://www.WenTianPlay.cn">关于我们</a>
             </div>
-            <p class="copyright">© 2025 天彬ICP备 | 文天玩WenTianPlay 版权所有</p>
+            <p class="copyright">© 2025 天彬ICP备案 | 文天玩WenTianPlay 版权所有</p>
         </div>
     </footer>
 
@@ -386,7 +384,7 @@
 
             let currentData = null;
 
-            // 中文数字转阿拉伯数字
+    
             function chineseToNumber(chineseStr) {
                 const chineseNumbers = {
                     '零': 0, '一': 1, '二': 2, '三': 3, '四': 4,
@@ -404,7 +402,7 @@
                 return result;
             }
 
-            // 标准化查询输入
+           
             function normalizeQuery(query) {
                 query = query.replace(/\s+/g, '');
 
@@ -419,7 +417,7 @@
                 return query;
             }
 
-            // 更新注册邮件链接
+           
             function updateRegisterLink(data) {
                 if (data) {
                     const subject = '天彬ICP备案注册申请';
@@ -442,7 +440,7 @@
                 errorMessage.style.display = 'none';
                 resultSection.style.display = 'none';
 
-                // 先加载本地配置文件
+              
                 fetch('ICP.json')
                     .then(response => {
                         if (!response.ok) {
@@ -451,7 +449,7 @@
                         return response.json();
                     })
                     .then(config => {
-                        // 使用配置中的远程数据URL
+                     
                         return fetch(config.dataUrl);
                     })
                     .then(response => {
@@ -463,7 +461,7 @@
                     .then(data => {
                         loading.style.display = 'none';
                         
-                        // 查找匹配的数据
+                    
                         const result = findMatchingData(data, normalizedQuery);
                         
                         if (result) {
@@ -512,6 +510,8 @@
                 document.getElementById('websiteName').textContent = data.websiteName || '--';
                 document.getElementById('status').textContent = data.status || '--';
                 document.getElementById('recordTime').textContent = data.recordTime || '--';
+
+document.getElementById('Time').textContent = data.recordTime || '--';
             }
         });
     </script>
