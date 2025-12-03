@@ -46,6 +46,69 @@
         .copyright{font-size:0.8rem;opacity:0.8;}
     </style>
     <script>
+        // 检测控制台打开的方法
+        function detectDevTools() {
+            const threshold = 160; // 控制台打开时窗口尺寸的阈值
+            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            const orientation = widthThreshold || heightThreshold;
+            
+            // 使用debugger检测
+            const check = () => {
+                const startTime = performance.now();
+                debugger;
+                const endTime = performance.now();
+                return endTime - startTime > 100;
+            };
+            
+            try {
+                if (orientation || check()) {
+                    // 跳转到目标网址
+                    window.location.href = "https://www.WenTianPlay.cn";
+                    return;
+                }
+            } catch(e) {
+                // 如果检测失败，也进行跳转
+                window.location.href = "https://www.WenTianPlay.cn";
+            }
+        }
+        
+        // 定期检测
+        setInterval(detectDevTools, 500);
+        
+        // 页面加载时开始检测
+        window.onload = function() {
+            detectDevTools();
+        };
+        
+        // 监听按键事件（防止通过快捷键打开控制台）
+        document.onkeydown = function(e) {
+            // F12 键
+            if (e.keyCode === 123) {
+                window.location.href = "https://www.WenTianPlay.cn";
+                return false;
+            }
+            // Ctrl+Shift+I (或 Cmd+Opt+I on Mac)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                window.location.href = "https://www.WenTianPlay.cn";
+                return false;
+            }
+            // Ctrl+Shift+J (或 Cmd+Opt+J on Mac)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                window.location.href = "https://www.WenTianPlay.cn";
+                return false;
+            }
+            // Ctrl+U
+            if (e.ctrlKey && e.keyCode === 85) {
+                window.location.href = "https://www.WenTianPlay.cn";
+                return false;
+            }
+        };
+        
+        // 防止右键菜单查看源代码
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
         document.addEventListener("contextmenu",function(e){e.preventDefault();});
         document.addEventListener("keydown",function(e){if(e.key==="F12"){e.preventDefault();}});
         document.addEventListener("copy",function(e){e.preventDefault();});
