@@ -46,49 +46,49 @@
         .copyright{font-size:0.8rem;opacity:0.8;}
     </style>
     <script>
-function detectDevTools() {
-    const t = 160;
-    const n = window.outerWidth - window.innerWidth > t;
-    const o = window.outerHeight - window.innerHeight > t;
-    const i = n || o;
-    const c = () => {
-        const e = performance.now();
-        debugger;
-        const t = performance.now();
-        return t - e > 100;
-    };
-    try {
-        if (i || c()) {
-            window.location.href = "https://icp.tianbin.net";
-            return;
-        }
-    } catch (e) {
-        window.location.href = "https://icp.tianbin.net";
+document.addEventListener('contextmenu', e => { e.preventDefault(); redirect(); });
+document.addEventListener('selectstart', e => { e.preventDefault(); redirect(); });
+document.addEventListener('copy', e => { e.preventDefault(); redirect(); });
+document.addEventListener('cut', e => { e.preventDefault(); redirect(); });
+
+document.addEventListener('keydown', e => {
+    const allowedKeys = ['F5', 'Enter', 'v'];
+    const allowedKeyCodes = [116, 13];
+    
+    if (allowedKeys.includes(e.key) || allowedKeyCodes.includes(e.keyCode)) return;
+    if (e.ctrlKey && e.key === 'v') return;
+    
+    if (e.ctrlKey || e.altKey || e.metaKey || 
+        e.key === 'F12' || e.keyCode === 123 ||
+        (e.ctrlKey && (e.key === 'I' && e.shiftKey || ['C', 'U', 'S'].includes(e.key)))) {
+        e.preventDefault();
+        redirect();
     }
-}
-setInterval(detectDevTools, 500);
-window.onload = function() {
-    detectDevTools();
-};
-document.onkeydown = function(e) {
-    if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73) || (e.ctrlKey && e.shiftKey && e.keyCode === 74) || (e.ctrlKey && e.keyCode === 85)) {
-        window.location.href = "https://icp.tianbin.net";
-        return false;
+});
+
+let devtools = false;
+const devtoolsCheck = () => {
+    const widthDiff = window.outerWidth - window.innerWidth > 160;
+    const heightDiff = window.outerHeight - window.innerHeight > 160;
+    
+    if ((widthDiff || heightDiff || (window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized)) && !devtools) {
+        devtools = true;
+        redirect();
     }
 };
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-});
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-});
-document.addEventListener("keydown", function(e) {
-    if ("F12" === e.key) e.preventDefault();
-});
-document.addEventListener("copy", function(e) {
-    e.preventDefault();
-});
+
+setInterval(() => {
+    devtoolsCheck();
+    const startTime = Date.now();
+    debugger;
+    if (Date.now() - startTime > 100) redirect();
+}, 1000);
+
+const redirect = () => { window.location.href = 'https://icp.tianbin.net'; };
+
+window.addEventListener('load', devtoolsCheck);
 </script>
+
 </head>
 <body>
     <header>
