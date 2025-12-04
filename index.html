@@ -46,30 +46,6 @@
         .copyright{font-size:0.8rem;opacity:0.8;}
     </style>
     <script>
-function detectDevTools() {
-    const t = 300;
-    const n = window.outerWidth - window.innerWidth > t;
-    const o = window.outerHeight - window.innerHeight > t;
-    const i = n || o;
-    const c = () => {
-        const e = performance.now();
-        debugger;
-        const t = performance.now();
-        return t - e > 100;
-    };
-    try {
-        if (i || c()) {
-            window.location.href = "https://icp.tianbin.net";
-            return;
-        }
-    } catch (e) {
-        window.location.href = "https://icp.tianbin.net";
-    }
-}
-setInterval(detectDevTools, 500);
-window.onload = function() {
-    detectDevTools();
-};
 document.onkeydown = function(e) {
     if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73) || (e.ctrlKey && e.shiftKey && e.keyCode === 74) || (e.ctrlKey && e.keyCode === 85)) {
         window.location.href = "https://icp.tianbin.net";
