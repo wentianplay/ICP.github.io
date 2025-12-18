@@ -1,5 +1,5 @@
 {
-  "dataUrl": "https://www.wentianplay.net/api/icp.json",
+  "dataUrl": "https://api.wentianplay.com/api/icp.json",
   "version": "1.0",
   "lastUpdated": "2025-03-31",
   "description": "天彬ICP备案系统配置文件 - 配置远程数据源"
