@@ -1,4 +1,4 @@
- 
+ 已迁至api.wentianplay.com
 const ICP = (() => {
     const database = {
         "20252823": {
